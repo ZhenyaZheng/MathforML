@@ -14,6 +14,6 @@ int main()
 		{0.1,0.2,0.2,0.2,0.6,0.4,0.3,0.1,0.6} };
 	cout << "test2 mirco auc = " << MyMath::AUC<MyMath::Micro>::getAUC(labels2, predictions2, 3) << endl;
 	cout << "test2 marco auc = " << MyMath::AUC<MyMath::Macro>::getAUC(labels2, predictions2, 3) << endl;
-	cout << "test2 marco logloss = " << MyMath::LogLoss<MyMath::Binary>::getLogLoss(labels2, predictions2, 3) << endl;
+	cout << "test2 marco logloss = " << MyMath::LogLoss<MyMath::Macro>::getLogLoss(labels2, predictions2, 3) << endl;
 	return 0;
 }

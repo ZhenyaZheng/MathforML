@@ -80,7 +80,7 @@ namespace MyMath
                 {
                     if (indexval[j].second == indexval[posti].second)
                     {
-                        if (labels[indexval[j].first] > 0)
+                        if (labels[indexval[j].first] == PositiveClass)
                             numipos++;
                         sumi += j + 1;
                     }
@@ -109,7 +109,7 @@ namespace MyMath
                 {
                     double pred_actual = predictions[1][i];
                     pred_actual = std::max(std::min(pred_actual, 1 - 1E-15), 1E-15);
-                    logloss += labels[i] == 0 ? (1 - labels[i]) * log(1 - pred_actual) : labels[i] * log(pred_actual);
+                    logloss += labels[i] == PositiveClass ? labels[i] * log(pred_actual) : (1 - labels[i]) * log(1 - pred_actual);
                 }
                 return -logloss / labels.size();
             }
